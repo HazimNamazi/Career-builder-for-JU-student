@@ -1,236 +1,141 @@
-# 📋 بوابة الوظائف - Job Portal
+# 🎓 Career Building for JU Students
 
-منصة احترافية للبحث عن الوظائف والتقدم للعروض الوظيفية في منطقة الخليج.
+> منصة توظيف متكاملة تربط طلاب جامعة جازان بأصحاب العمل في المملكة العربية السعودية ومنطقة الخليج.
+
+🔗 **Live Demo**: [careerbuildingforjustudents.netlify.app](https://careerbuildingforjustudents.netlify.app)
 
 ---
 
-## 📁 هيكل المشروع
+## 📸 Preview
+
+![Career Builder Preview](./screenshots/preview.png)
+
+---
+
+## ✨ Features
+
+- 💼 **Job Listings** — Real job postings with company, location, salary, and department
+- 🔍 **Smart Filtering** — Filter jobs by department/major (e.g. CS, Business, Engineering)
+- 👤 **User Authentication** — Student and employer registration & login
+- 📤 **CV Upload** — Students can upload their resumes directly through the platform
+- 🌐 **Bilingual** — Full Arabic and English support
+- 📱 **Responsive Design** — Works on desktop, tablet, and mobile
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | HTML5, CSS3, JavaScript |
+| Icons | Font Awesome 6.4.0 |
+| Job Database | Neon (Serverless PostgreSQL) |
+| File Storage | Supabase Storage (CV uploads) |
+| Hosting | Netlify |
+| Backend | Netlify Functions (Serverless) |
+
+---
+
+## 📁 Project Structure
 
 ```
-job-portal/
-├── index.html              # الصفحة الرئيسية
+Career-builder-for-JU-student/
+├── index.html
 ├── css/
-│   └── style.css          # التنسيقات الرئيسية
+│   └── style.css
 ├── js/
-│   └── script.js          # الوظائف التفاعلية
+│   └── script.js
 ├── pages/
-│   ├── jobs.html          # صفحة تصفح الوظائف
-│   ├── companies.html     # صفحة الشركات (قيد التطوير)
-│   ├── about.html         # صفحة عن البوابة (قيد التطوير)
-│   └── contact.html       # صفحة التواصل (قيد التطوير)
-├── images/
-│   └── (صور الشركات واللوجوهات)
-└── database/
-    ├── jobs.db           # قاعدة بيانات الوظائف
-    └── users.db          # قاعدة بيانات المستخدمين
+│   ├── jobs.html         # Browse & filter job listings
+│   ├── login.html        # User login
+│   ├── signup.html       # User registration
+│   ├── about.html        # About the platform
+│   └── contact.html      # Contact page
+├── netlify/
+│   └── functions/        # Serverless API functions
+├── database/             # DB schema & queries
+├── netlify.toml
+└── package.json
 ```
 
 ---
 
-## 🌟 المميزات الرئيسية
+## 🚀 Getting Started
 
-### 1️⃣ الصفحة الرئيسية (index.html)
-- **شريط التنقل**: يحتوي على الشعار والروابط الأساسية وأزرار الدخول والتسجيل
-- **قسم البطل (Hero Section)**: بحث سريع عن الوظائف
-- **الفئات**: عرض الفئات الرئيسية للوظائف (تكنولوجيا، مالية، تصميم، إلخ)
-- **آخر الوظائف**: عرض بطاقات الوظائف الجديدة
-- **الإحصائيات**: أرقام مهمة عن البوابة
-- **التذييل**: روابط سريعة ووسائل التواصل الاجتماعي
+### Prerequisites
+- Node.js installed
+- Netlify CLI (optional)
 
-### 2️⃣ صفحة الوظائف (pages/jobs.html)
-- **نظام التصفية المتقدم**: تصفية حسب الفئة والمدينة والراتب والخبرة
-- **قائمة الوظائف**: عرض مفصل لكل وظيفة
-- **معلومات الوظيفة**: المسمى والشركة والموقع والراتب والمهارات المطلوبة
-- **زر التقدم**: تقديم طلب للوظيفة
+### Run Locally
 
----
-
-## 🎨 التنسيقات (CSS)
-
-### الألوان الأساسية:
-```css
---primary-color: #007bff       /* الأزرق الأساسي */
---secondary-color: #6c757d     /* الرمادي الثانوي */
---success-color: #28a745       /* الأخضر (نجاح) */
---light-color: #f8f9fa         /* أبيض خفيف */
---dark-color: #343a40          /* رمادي غامق */
-```
-
-### المكونات الرئيسية:
-- **شريط التنقل**: لاصق (sticky) في الأعلى
-- **الأزرار**: أنماط مختلفة (login, signup, apply)
-- **البطاقات**: بظلال وتأثيرات عند التمرير (hover)
-- **الشبكات**: نظام Grid مرن ومستجيب
-
----
-
-## 🔧 الوظائف الرئيسية (JavaScript)
-
-### دوال أساسية:
-
-#### 1. البحث عن الوظائف
-```javascript
-searchJobs(query)
-// البحث عن وظائف بناءً على الكلمات المفتاحية
-```
-
-#### 2. التقدم للوظيفة
-```javascript
-applyJob(jobId)
-// إرسال طلب التقدم للوظيفة
-```
-
-#### 3. تصفية حسب الفئة
-```javascript
-filterJobsByCategory(category)
-// تصفية الوظائف حسب الفئة المختارة
-```
-
-#### 4. التحقق من صحة البيانات
-```javascript
-validateEmail(email)        // التحقق من البريد الإلكتروني
-validatePhoneNumber(phone)  // التحقق من رقم الهاتف السعودي
-```
-
-#### 5. التعامل مع التخزين المحلي
-```javascript
-saveUserData(userData)      // حفظ بيانات المستخدم
-getUserData()               // استرجاع بيانات المستخدم
-clearUserData()             // حذف بيانات المستخدم
-```
-
----
-
-## 📱 المستجيبية (Responsive Design)
-
-المشروع مصمم ليعمل بشكل مثالي على:
-- 📺 **الشاشات الكبيرة**: سطح المكتب (1024px+)
-- 📱 **الشاشات المتوسطة**: الأجهزة اللوحية (768px - 1024px)
-- 📲 **الشاشات الصغيرة**: الهواتف الذكية (أقل من 768px)
-
----
-
-## 🚀 كيفية الاستخدام
-
-### 1. فتح المشروع
 ```bash
-# افتح الملف في VS Code
-code job-portal.code-workspace
+# Clone the repo
+git clone https://github.com/HazimNamazi/Career-builder-for-JU-student.git
 
-# أو افتح الملف index.html مباشرة في المتصفح
+cd Career-builder-for-JU-student
+
+npm install
+
+# Open index.html with Live Server in VS Code
 ```
 
-### 2. استخدام Live Server
-- انقر كليك يمين على `index.html`
-- اختر "Open with Live Server"
-- سيتم فتح البوابة تلقائياً في المتصفح
+### Environment Variables
 
-### 3. التطوير والتعديل
-- عدّل ملفات HTML للمحتوى
-- عدّل CSS/style.css للمظهر
-- عدّل js/script.js للوظائف التفاعلية
+Create a `.env` file locally (never commit this file):
 
----
-
-## 📊 بيانات الوظائف
-
-حالياً، البيانات مخزنة في متغير JavaScript (`jobs`):
-
-```javascript
-const jobs = [
-    {
-        id: 1,
-        title: "مهندس برمجيات",
-        company: "شركة التقنية المتقدمة",
-        location: "الرياض",
-        salary: "8,000 - 12,000",
-        description: "...",
-        skills: ["JavaScript", "React"],
-        category: "technology"
-    },
-    // المزيد من الوظائف...
-];
+```
+DATABASE_URL=your_neon_postgresql_url
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-### للتطوير المستقبلي:
-يمكن ربط البوابة بـ:
-- **قاعدة بيانات SQL**: MySQL أو PostgreSQL
-- **قاعدة بيانات NoSQL**: MongoDB
-- **API خارج**: للحصول على البيانات من خادم
+For deployment, add these variables in **Netlify → Site Settings → Environment Variables**.
 
 ---
 
-## 🔐 الأمان والبيانات
+## 🗄️ Database Architecture
 
-### ملاحظات مهمة:
-- البيانات الحالية محفوظة محلياً فقط
-- في الإنتاج، استخدم:
-  - **HTTPS** للتشفير
-  - **التحقق الثنائي** للأمان
-  - **قاعدة بيانات آمنة** للبيانات الحساسة
-  - **معالجة البيانات الحساسة** على الخادم وليس المتصفح
+**Neon (PostgreSQL)** — Job & user data:
+- `users` — Student and employer accounts
+- `jobs` — Job listings with department filtering
+- `applications` — Submitted job applications
 
----
-
-## 🛠️ الأدوات والمكتبات المستخدمة
-
-- **HTML5**: لبناء الهيكل الأساسي
-- **CSS3**: للتنسيقات والتأثيرات المتقدمة
-- **JavaScript**: للوظائف التفاعلية
-- **Font Awesome 6.4.0**: للأيقونات
+**Supabase Storage** — File management:
+- Stores student CV files (PDF)
+- Secure per-user file access
 
 ---
 
-## 📋 الميزات المخطط إضافتها
+## 📋 Roadmap
 
-- [ ] نظام المستخدمين (تسجيل وتسجيل دخول)
-- [ ] لوحة تحكم المستخدم
-- [ ] رفع السيرة الذاتية
-- [ ] نظام التقييمات والآراء
-- [ ] تنبيهات الوظائف الجديدة
-- [ ] نظام الرسائل بين الباحثين والشركات
-- [ ] التكامل مع وسائل التواصل الاجتماعي
-- [ ] نظام الدفع للشركات المدفوعة
-
----
-
-## 🎓 نصائح للتطوير
-
-### أفضل الممارسات:
-1. **كود نظيف**: استخدم أسماء واضحة ومفهومة
-2. **التعليقات**: وثّق الأكواد المعقدة
-3. **المختبرات**: اختبر الكود على متصفحات مختلفة
-4. **الأداء**: استخدم أدوات DevTools لتحسين الأداء
-5. **الأمان**: تحقق من الثغرات الأمنية
-
-### أدوات مفيدة:
-- **VS Code**: محرر الكود الموصى به
-- **Chrome DevTools**: لتصحيح الأخطاء
-- **Lighthouse**: لقياس جودة الموقع
-- **Figma**: لتصميم الواجهات
+- [x] Job listings with real data
+- [x] Department-based job filtering
+- [x] Bilingual support (AR / EN)
+- [x] Responsive design
+- [x] Live deployment on Netlify
+- [x] PostgreSQL database (Neon)
+- [x] CV file storage (Supabase)
+- [ ] Student dashboard
+- [ ] Employer dashboard
+- [ ] Email notifications for new jobs
+- [ ] Ratings and reviews system
+- [ ] Mobile app (React Native)
 
 ---
 
-## 📞 الدعم والمساعدة
+## 👨‍💻 Author
 
-إذا واجهت أي مشاكل:
-1. تحقق من تنسيق الملفات والمسارات
-2. افتح console المتصفح (F12) للأخطاء
-3. تأكد من استخدام متصفح حديث
-4. جرّب تفريغ الكاش (Ctrl+Shift+Delete)
-
----
-
-## 📄 الترخيص
-
-هذا المشروع مفتوح المصدر ومتاح للاستخدام التعليمي والتجاري.
+**Hazim Namazi**
+- 🐙 GitHub: [@HazimNamazi](https://github.com/HazimNamazi)
+- 💼 LinkedIn: [your-linkedin-url]
+- 📧 Email: Namazihazim@gmail.com
 
 ---
 
-## 🙌 شكراً لاستخدامك بوابة الوظائف!
+## 📄 License
 
-**تم الإنشاء بـ ❤️ لجعل البحث عن الوظائف أسهل وأفضل**
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-*آخر تحديث: 2025*
+*Built with ❤️ to make job hunting easier for JU students*
