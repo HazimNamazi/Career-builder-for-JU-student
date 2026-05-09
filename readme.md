@@ -8,7 +8,8 @@
 
 ## 📸 Preview
 
-![Career Builder Preview](./screenshots/preview.png)
+![Career Builder Preview](.![Uploading Screenshot 2026-05-09 at 11.51.24 AM.png…]()
+)
 
 ---
 
