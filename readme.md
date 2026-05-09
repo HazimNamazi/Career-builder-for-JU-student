@@ -9,7 +9,8 @@
 
 ## 📸 Preview
 
-![Career Builder Preview](.![Uploading Screenshot 2026-05-09 at 11.51.24 AM.png…]()
+![Career Builder Preview](.<img width="1469" height="831" alt="Screenshot 2026-05-09 at 12 03 07 PM" src="https://github.com/user-attachments/assets/3e648262-11e3-4f48-b74f-a7bebc7da07b" />
+)
 )
 
 ---
