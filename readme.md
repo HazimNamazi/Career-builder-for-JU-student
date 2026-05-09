@@ -130,7 +130,8 @@ For deployment, add these variables in **Netlify → Site Settings → Environme
 
 **Hazim Namazi**
 - 🐙 GitHub: [@HazimNamazi](https://github.com/HazimNamazi)
-- 💼 LinkedIn: [your-linkedin-url]
+- 💼 LinkedIn: [www.linkedin.com/in/hazim-namazi-898bba296
+]
 - 📧 Email: Namazihazim@gmail.com
 
 ---
